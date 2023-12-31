@@ -6,6 +6,7 @@ nav{
     position: sticky;
     z-index: 100;
     top: 0;
+    backdrop-filter: blur(10px);
 }
 .navbar{
     display: flex;

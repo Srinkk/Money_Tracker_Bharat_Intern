@@ -18,14 +18,22 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    monthly_income : {
+    monthly_budget : {
         type : Number,
         default : 0
     },
-    expense : {
-        type : Number,
-        default : 0
-    },
+    expense: [
+    
+        {name: {
+          type: String,
+          default: "",
+        },
+        amount: {
+          type: Number,
+          default: 0,
+        } }
+    
+    ],
     netWorth : {
         type : Number,
         default : 0

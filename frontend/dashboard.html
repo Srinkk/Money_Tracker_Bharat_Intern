@@ -1,21 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://boxicons.com/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/7cc00222ce.js" crossorigin="anonymous"></script>
+    <script defer src="./dashboard.js"></script>
     <title>Dashboard</title>
 </head>
-<body>
-    <h1>Welcome <h1 id="user_name"> </h1></h1>
-    <script>
-        const resName = document.getElementById('user_name')
-        const fName = localStorage.getItem('f_name');
-        const email = localStorage.getItem('email')
-        if(fName)
-        {
-            resName.textContent = fName
-        }
-    </script>
-    
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i  id="header-toggle"></i>
+            <h4 class="welcome">Welcome <span id="user_name"></span>,</h4>
+        </div>
+        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <!-- <div> <a href="#" class="nav_logo"> <i class='fa-regular fa-user'></i> <span
+                        class="nav_logo-name">User</span> </a>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class="fa-solid fa-cube"></i>
+                    <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"></a><i
+                            class='bx bx-user nav_icon'></i> 
+                      <i class='bx bx-message-square-detail nav_icon'></i> <span
+                            class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i
+                            class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#"
+                        class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a>
+                    <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span
+                            class="nav_name">Stats</span> </a> </div>
+            </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span
+                    class="nav_name">SignOut</span> </a> -->
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light">
+        <div id="monthly_budget_box">
+            <div class="container_monthly_show">
+                <div class="monthly_budget" id="monthly_budget">
+                    <i class="fas fa-times close-icon" id="close_icon"></i>
+                    <div class="head">Please enter your monthly budget</div>
+                    <div class="boxes">
+                        <select id="dropdown" class="dropdown-menu">
+                            <option class="dropdown-item-text" value="Rs">Rs</option>
+                            <option class="dropdown-item-text" value="USD">USD</option>
+                            <option class="dropdown-item-text" value="EURO">EURO</option>
+                        </select>
+                        <div class="budget_value_box" id="budget_value_box">
+                            <input type="number" id="budget_value" class="budget_value" placeholder="Enter amount" />
+                            <div id="response_box">
+                            </div>
+                            <button class="submit_budget" type="submit" id="submit_budget">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="container_regular">
+                <div class="monthly_budget">
+                    <div class="head">Add your expenses here</div>
+                        <div class ="regular_expense_box">
+                            <p>Regular expenses</p>
+                            <div class="add"> 
+                               <button id="get_total"><u>Get total</u></button>
+                                <button id="add_expense" onclick="addItem()"><u>+Add</u></button>
+                            </div> 
+                        </div>
+                        <div class="item_list">
+                            <ul>
+                                <!-- <li class="item">ghghg<div class="amount">100</div><span class="fas fa-trash"></span></li>
+                                <li class="item">ghghg<span class="fas fa-trash"></span></li>
+                                <li class="item">ghghg<span class="fas fa-trash"></span></li>
+                                <li class="item">ghghg<span class="fas fa-trash"></span></li> -->
+                            </ul>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--Container Main end-->
 </body>
+
 </html>

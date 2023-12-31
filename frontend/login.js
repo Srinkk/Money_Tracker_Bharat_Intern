@@ -38,14 +38,16 @@ document.getElementById('submit-button').addEventListener('click',function(event
             return response.json()
         })
         .then(data =>{
+            console.log(data)
             localStorage.setItem('f_name',data.userExists.f_name)
-            responseBox.textContent = data.userExists.f_name
         })
         .catch((err)=>{
+            response.textContent =  err
             console.log(err)
         })     
         
     }catch (error) {
+        response.textContent =  err
         console.log(error)
     }
         
